@@ -1,12 +1,9 @@
-- 👋 Hi, I’m @MK-1407
-- 👀 I’m interested in Web Development
-- 🌱 I’m currently learning JavaScript
-- 💞️ I’m looking to collaborate on Web Projects
-- 📫 How to reach me (My Email)[mayank140706@gmail.com]
-- ⚡ Fun fact: Python Object Oriented Programming is in short POOP
+# @MK-1407
 
-<!---
-MK-1407/MK-1407 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+![Banner Image](https://img.freepik.com/free-vector/science-project-twitch-banner_23-2150894772.jpg?w=996&t=st=1711030438~exp=1711031038~hmac=ea0a42cf9cc31c1ca5ae59edcb47cfeab18036c330804104a6c33bd0e8a33956)
+
+- Hii I am Mayank this is my Github Profile.
+- I like to develop Web Apps , Desktop Apps and Automation Scripts.
+- I am a student and amateur developer from India.
+
 ![Mayank's GitHub stats](https://github-readme-stats.vercel.app/api?username=MK-1407&theme=ambient_gradient&show_icons=true)
