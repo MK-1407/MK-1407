@@ -1,0 +1,363 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400" preserveAspectRatio="xMidYMid meet">
+    <rect width="100%" height="100%" fill="#09090B" />
+
+    <defs>
+        <!-- Tight glow directly on the logo text -->
+        <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="0" result="blur">
+                <animate
+                    attributeName="stdDeviation"
+                    values="0;0;0.5;1;2;1.5"
+                    keyTimes="0;0.5;0.65;0.8;0.9;1"
+                    dur="1.8s"
+                    begin="0s"
+                    fill="freeze" />
+            </feGaussianBlur>
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <!-- Wide soft blur for the ambient halo behind the logo -->
+        <filter id="bgHalo" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="0" result="blur">
+                <animate
+                    attributeName="stdDeviation"
+                    values="0;0;10;25;45;60"
+                    keyTimes="0;0.5;0.65;0.8;0.9;1"
+                    dur="1.8s"
+                    begin="0s"
+                    fill="freeze" />
+            </feGaussianBlur>
+        </filter>
+
+        <radialGradient id="haloColor" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#9FEAF9" stop-opacity="0.55" />
+            <stop offset="60%" stop-color="#9FEAF9" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#9FEAF9" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Subtitle typewriter clip -->
+        <clipPath id="clip-subtitle">
+            <rect x="380" y="406" height="32" width="0">
+                <animate attributeName="width" from="0" to="600" begin="2.0s" dur="1.2s" fill="freeze" />
+            </rect>
+        </clipPath>
+
+        <!-- BIOS terminal typewriter clips (coordinates relative to #bios-boot group) -->
+        <clipPath id="clip-title">
+            <rect x="0" y="-24" height="32" width="0">
+                <animate attributeName="width" from="0" to="120" begin="3.4s" dur="0.2s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-sep">
+            <rect x="0" y="6" height="32" width="0">
+                <animate attributeName="width" from="0" to="120" begin="3.7s" dur="0.2s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-mem">
+            <rect x="0" y="46" height="32" width="0">
+                <animate attributeName="width" from="0" to="400" begin="4.0s" dur="0.7s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-sec">
+            <rect x="0" y="76" height="32" width="0">
+                <animate attributeName="width" from="0" to="420" begin="4.8s" dur="0.75s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-ai">
+            <rect x="0" y="106" height="32" width="0">
+                <animate attributeName="width" from="0" to="420" begin="5.65s" dur="0.75s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-backend">
+            <rect x="0" y="136" height="32" width="0">
+                <animate attributeName="width" from="0" to="440" begin="6.5s" dur="0.75s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-gh">
+            <rect x="0" y="166" height="32" width="0">
+                <animate attributeName="width" from="0" to="460" begin="7.35s" dur="0.8s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-final">
+            <rect x="0" y="206" height="32" width="0">
+                <animate attributeName="width" from="0" to="380" begin="8.35s" dur="0.6s" fill="freeze" />
+            </rect>
+        </clipPath>
+        <clipPath id="clip-motto">
+            <rect x="0" y="236" height="32" width="0">
+                <animate attributeName="width" from="0" to="400" begin="9.05s" dur="0.65s" fill="freeze" />
+            </rect>
+        </clipPath>
+    </defs>
+
+    <!-- Ambient background halo, sits behind the logo, fades in with the boot -->
+    <ellipse
+        cx="800"
+        cy="270"
+        rx="620"
+        ry="260"
+        fill="url(#haloColor)"
+        filter="url(#bgHalo)"
+        opacity="0">
+        <animate
+            attributeName="opacity"
+            values="0;0;0.3;0.15;0.6;0.3;0.8"
+            keyTimes="0;0.15;0.25;0.35;0.65;0.8;1"
+            dur="1.8s"
+            fill="freeze" />
+    </ellipse>
+
+    <g id="boot-logo" transform="translate(300, 120)" opacity="0" filter="url(#textGlow)">
+        <!-- Boot flicker -->
+        <animate
+            attributeName="opacity"
+            values="
+                0;
+                0;
+                0.25;
+                0;
+                0.5;
+                0.2;
+                0.8;
+                0.4;
+                1"
+            keyTimes="
+                0;
+                0.15;
+                0.25;
+                0.35;
+                0.5;
+                0.65;
+                0.8;
+                0.9;
+                1"
+            dur="1.8s"
+            fill="freeze"/>
+
+        <text
+            x="0"
+            y="0"
+            fill="#9FEAF9"
+            font-family="Consolas, 'Courier New', monospace"
+            font-size="26"
+            font-weight="700"
+            xml:space="preserve"
+            >
+            <tspan x="80" dy="45"></tspan>
+            <tspan x="80" dy="32">======================================================</tspan>
+            <tspan x="80" dy="32">███╗   ███╗ █████╗ ██╗   ██╗ █████╗ ███╗   ██╗██╗  ██╗</tspan>
+            <tspan x="80" dy="32">████╗ ████║██╔══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║██║ ██╔╝</tspan>
+            <tspan x="80" dy="32">██╔████╔██║███████║ ╚████╔╝ ███████║██╔██╗ ██║█████╔╝</tspan>
+            <tspan x="80" dy="32">██║╚██╔╝██║██╔══██║  ╚██╔╝  ██╔══██║██║╚██╗██║██╔═██╗</tspan>
+            <tspan x="80" dy="32">██║ ╚═╝ ██║██║  ██║   ██║   ██║  ██║██║ ╚████║██║  ██╗</tspan>
+            <tspan x="80" dy="32">╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝</tspan>
+            <tspan x="80" dy="32">======================================================</tspan>
+        </text>
+    </g>
+
+    <!-- Subtitle, typed in under the logo once it settles -->
+    <text x="380" y="430" fill="#6FB8C7" font-family="Consolas, 'Courier New', monospace"
+        font-size="18" clip-path="url(#clip-subtitle)">
+        Cybersecurity &#8226; AI Engineering &#8226; Backend Development
+    </text>
+
+    <g id="bios-boot" transform="translate(300, 520)"
+       font-family="Consolas, 'Courier New', monospace"
+       font-size="20" font-weight="700" xml:space="preserve">
+
+        <text x="0" y="0" fill="#9FEAF9" clip-path="url(#clip-title)">BIOS v2.6</text>
+
+        <text x="0" y="30" fill="#3C5A63" clip-path="url(#clip-sep)">──────────</text>
+
+        <text x="0" y="70" clip-path="url(#clip-mem)">
+            <tspan fill="#9FEAF9">Memory Test............... </tspan><tspan fill="#5DCAA5">PASS</tspan>
+        </text>
+
+        <text x="0" y="100" clip-path="url(#clip-sec)">
+            <tspan fill="#9FEAF9">Security Module............ </tspan><tspan fill="#5DCAA5">ACTIVE</tspan>
+        </text>
+
+        <text x="0" y="130" clip-path="url(#clip-ai)">
+            <tspan fill="#9FEAF9">AI Engine.................. </tspan><tspan fill="#5DCAA5">ONLINE</tspan>
+        </text>
+
+        <text x="0" y="160" clip-path="url(#clip-backend)">
+            <tspan fill="#9FEAF9">Backend Systems............ </tspan><tspan fill="#5DCAA5">READY</tspan>
+        </text>
+
+        <text x="0" y="190" clip-path="url(#clip-gh)">
+            <tspan fill="#9FEAF9">GitHub Sync................ </tspan><tspan fill="#5DCAA5">CONNECTED</tspan>
+        </text>
+
+        <text x="0" y="230" fill="#9FEAF9" clip-path="url(#clip-final)">Loading Developer: Mayank...</text>
+
+        <text x="0" y="260" fill="#EAF5F0" clip-path="url(#clip-motto)">&gt; Build. Break. Learn. Repeat.</text>
+
+        <rect x="380" y="246" width="10" height="18" fill="#9FEAF9" opacity="0">
+            <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1"
+                dur="1s" begin="9.7s" repeatCount="indefinite" />
+        </rect>
+    </g>
+
+    <!-- Full README content, printed line by line as a continuing terminal dump -->
+    <g id="readme-dump" transform="translate(300, 850)"
+       font-family="Consolas, 'Courier New', monospace"
+       font-size="16" xml:space="preserve">
+
+        <text x="0" y="0" fill="#6FB8C7" font-weight="700" opacity="0">$ cat about_me.py
+            <animate attributeName="opacity" from="0" to="1" begin="10.0s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="26" fill="#9FEAF9" opacity="0">class Mayank:
+            <animate attributeName="opacity" from="0" to="1" begin="10.12s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="52" fill="#9FEAF9" opacity="0">role = "Computer Science Student"
+            <animate attributeName="opacity" from="0" to="1" begin="10.24s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="78" fill="#9FEAF9" opacity="0">location = "India"
+            <animate attributeName="opacity" from="0" to="1" begin="10.36s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="104" fill="#9FEAF9" opacity="0">interests = [
+            <animate attributeName="opacity" from="0" to="1" begin="10.48s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="130" fill="#5DCAA5" opacity="0">"Cybersecurity",
+            <animate attributeName="opacity" from="0" to="1" begin="10.6s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="156" fill="#5DCAA5" opacity="0">"Artificial Intelligence",
+            <animate attributeName="opacity" from="0" to="1" begin="10.72s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="182" fill="#5DCAA5" opacity="0">"Backend Development",
+            <animate attributeName="opacity" from="0" to="1" begin="10.84s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="208" fill="#5DCAA5" opacity="0">"Machine Learning",
+            <animate attributeName="opacity" from="0" to="1" begin="10.96s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="234" fill="#5DCAA5" opacity="0">"System Design"
+            <animate attributeName="opacity" from="0" to="1" begin="11.08s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="260" fill="#9FEAF9" opacity="0">]
+            <animate attributeName="opacity" from="0" to="1" begin="11.2s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="286" fill="#9FEAF9" opacity="0">currently_building = [
+            <animate attributeName="opacity" from="0" to="1" begin="11.32s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="312" fill="#5DCAA5" opacity="0">"Voxa AI Receptionist",
+            <animate attributeName="opacity" from="0" to="1" begin="11.44s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="338" fill="#5DCAA5" opacity="0">"Security Tools",
+            <animate attributeName="opacity" from="0" to="1" begin="11.56s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="364" fill="#5DCAA5" opacity="0">"Open Source Projects"
+            <animate attributeName="opacity" from="0" to="1" begin="11.68s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="390" fill="#9FEAF9" opacity="0">]
+            <animate attributeName="opacity" from="0" to="1" begin="11.8s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="416" fill="#9FEAF9" opacity="0">learning = [
+            <animate attributeName="opacity" from="0" to="1" begin="11.92s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="442" fill="#5DCAA5" opacity="0">"Advanced Web Security",
+            <animate attributeName="opacity" from="0" to="1" begin="12.04s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="468" fill="#5DCAA5" opacity="0">"Cloud Security",
+            <animate attributeName="opacity" from="0" to="1" begin="12.16s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="494" fill="#5DCAA5" opacity="0">"AI Agents"
+            <animate attributeName="opacity" from="0" to="1" begin="12.28s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="520" fill="#9FEAF9" opacity="0">]
+            <animate attributeName="opacity" from="0" to="1" begin="12.4s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="546" fill="#EAF5F0" opacity="0">motto = "Build. Break. Learn. Repeat."
+            <animate attributeName="opacity" from="0" to="1" begin="12.52s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="598" fill="#6FB8C7" font-weight="700" opacity="0">$ cat current_focus.md
+            <animate attributeName="opacity" from="0" to="1" begin="12.7s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="624" fill="#EAF5F0" opacity="0">- Hunting for web application vulnerabilities
+            <animate attributeName="opacity" from="0" to="1" begin="12.82s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="650" fill="#EAF5F0" opacity="0">- Building AI-powered applications
+            <animate attributeName="opacity" from="0" to="1" begin="12.94s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="676" fill="#EAF5F0" opacity="0">- Developing secure backend systems
+            <animate attributeName="opacity" from="0" to="1" begin="13.06s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="702" fill="#EAF5F0" opacity="0">- Learning advanced offensive and defensive security
+            <animate attributeName="opacity" from="0" to="1" begin="13.18s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="728" fill="#EAF5F0" opacity="0">- Contributing to open-source projects
+            <animate attributeName="opacity" from="0" to="1" begin="13.3s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="780" fill="#6FB8C7" font-weight="700" opacity="0">$ tech-stack --list
+            <animate attributeName="opacity" from="0" to="1" begin="13.48s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="806" fill="#5DCAA5" opacity="0">Python, JavaScript, TypeScript, C, Node.js, Express,
+            <animate attributeName="opacity" from="0" to="1" begin="13.6s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="832" fill="#5DCAA5" opacity="0">React, MongoDB, TailwindCSS, Linux, Docker, Git, GitHub, VS Code
+            <animate attributeName="opacity" from="0" to="1" begin="13.72s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="884" fill="#6FB8C7" font-weight="700" opacity="0">$ cat featured_projects.md
+            <animate attributeName="opacity" from="0" to="1" begin="13.9s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="910" fill="#9FEAF9" font-weight="700" opacity="0">[1] Secure Authentication System
+            <animate attributeName="opacity" from="0" to="1" begin="14.02s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="936" fill="#EAF5F0" opacity="0">JWT auth, password hashing, validation, rate limiting
+            <animate attributeName="opacity" from="0" to="1" begin="14.14s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="966" fill="#9FEAF9" font-weight="700" opacity="0">[2] Vulnerability Scanner
+            <animate attributeName="opacity" from="0" to="1" begin="14.26s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="992" fill="#EAF5F0" opacity="0">Multi-threaded port/service scanner with banner grabbing
+            <animate attributeName="opacity" from="0" to="1" begin="14.38s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1022" fill="#9FEAF9" font-weight="700" opacity="0">[3] Phishing Detection Model
+            <animate attributeName="opacity" from="0" to="1" begin="14.5s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="1048" fill="#EAF5F0" opacity="0">ML/NLP model trained to classify phishing emails
+            <animate attributeName="opacity" from="0" to="1" begin="14.62s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1078" fill="#9FEAF9" font-weight="700" opacity="0">[4] Voxa (Work in Progress)
+            <animate attributeName="opacity" from="0" to="1" begin="14.74s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="60" y="1104" fill="#EAF5F0" opacity="0">AI voice receptionist: speech recognition + LLM + speech synthesis
+            <animate attributeName="opacity" from="0" to="1" begin="14.86s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="1156" fill="#6FB8C7" font-weight="700" opacity="0">$ cat find_here.md
+            <animate attributeName="opacity" from="0" to="1" begin="15.04s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1182" fill="#EAF5F0" opacity="0">- Security-focused projects
+            <animate attributeName="opacity" from="0" to="1" begin="15.16s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1208" fill="#EAF5F0" opacity="0">- AI and Machine Learning experiments
+            <animate attributeName="opacity" from="0" to="1" begin="15.28s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1234" fill="#EAF5F0" opacity="0">- Backend APIs and web applications
+            <animate attributeName="opacity" from="0" to="1" begin="15.4s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1260" fill="#EAF5F0" opacity="0">- Developer tools and automation
+            <animate attributeName="opacity" from="0" to="1" begin="15.52s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1286" fill="#EAF5F0" opacity="0">- Continuous learning through real-world projects
+            <animate attributeName="opacity" from="0" to="1" begin="15.64s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="1338" fill="#6FB8C7" font-weight="700" opacity="0">$ connect --list
+            <animate attributeName="opacity" from="0" to="1" begin="15.82s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1364" opacity="0">
+            <tspan fill="#9FEAF9">LinkedIn : </tspan><tspan fill="#5DCAA5">linkedin.stremlo.dev</tspan>
+            <animate attributeName="opacity" from="0" to="1" begin="15.94s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="30" y="1390" opacity="0">
+            <tspan fill="#9FEAF9">Email    : </tspan><tspan fill="#5DCAA5">hello@stremlo.dev</tspan>
+            <animate attributeName="opacity" from="0" to="1" begin="16.06s" dur="0.3s" fill="freeze" /></text>
+
+        <text x="0" y="1442" fill="#9FEAF9" font-weight="700" opacity="0">Thanks for visiting! Happy Coding.
+            <animate attributeName="opacity" from="0" to="1" begin="16.3s" dur="0.4s" fill="freeze" /></text>
+    </g>
+</svg>
