@@ -17,7 +17,7 @@
   <img src="projects.svg">
 </p>
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 <p align="center">
 <img src="https://skillicons.dev/icons?i=python,javascript,typescript,c,nodejs,express,react,mongodb,tailwind,linux,docker,git,github,vscode&theme=dark&perline=7" />
