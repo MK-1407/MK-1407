@@ -1,36 +1,48 @@
 <div align="center">
 
-# Hey 👋 I'm Mayank
+# 👋 Hey, I'm Mayank
 
-### Cybersecurity • AI Engineering • Full-Stack Development
+### 🛡️ Cybersecurity • 🤖 AI Engineering • ⚙️ Backend Development
 
-*"Breaking systems to understand them. Building systems to secure them."*
+> *"Breaking systems to understand them. Building systems to secure them."*
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=3500&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=Cybersecurity+Enthusiast;AI+Developer;Bug+Bounty+Hunter;Building+Secure+Applications;Always+Learning+Something+New" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&duration=3500&pause=1200&color=58A6FF&center=true&vCenter=true&width=750&lines=Cybersecurity+Enthusiast;Bug+Bounty+Hunter;AI+Developer;Backend+Engineer;Always+Building+Something+New" />
+
+<br>
+
+![](https://komarev.com/ghpvc/?username=MK-1407\&style=for-the-badge\&color=blue)
 
 </div>
 
 ---
 
-## ⚡ About Me
+## 👨‍💻 About Me
 
 ```python
 class Mayank:
+
+    role = "Computer Science Student"
 
     location = "India"
 
     interests = [
         "Cybersecurity",
         "Artificial Intelligence",
-        "Backend Engineering",
-        "System Design",
-        "Machine Learning"
+        "Backend Development",
+        "Machine Learning",
+        "System Design"
     ]
 
     currently_building = [
         "Voxa AI Receptionist",
-        "Security Research",
+        "Security Tools",
         "Open Source Projects"
+    ]
+
+    learning = [
+        "Advanced Web Security",
+        "Cloud Security",
+        "AI Agents"
     ]
 
     motto = "Build. Break. Learn. Repeat."
@@ -38,72 +50,93 @@ class Mayank:
 
 ---
 
-## 🛠 Arsenal
+## 🚀 Current Focus
 
-### Languages
-![Python](https://skillicons.dev/icons?i=python)
-![JavaScript](https://skillicons.dev/icons?i=javascript)
-![TypeScript](https://skillicons.dev/icons?i=typescript)
-![C](https://skillicons.dev/icons?i=c)
-
-### Backend
-
-![NodeJS](https://skillicons.dev/icons?i=nodejs)
-![Express](https://skillicons.dev/icons?i=express)
-![MongoDB](https://skillicons.dev/icons?i=mongodb)
-
-### Frontend
-
-![React](https://skillicons.dev/icons?i=react)
-![Tailwind](https://skillicons.dev/icons?i=tailwind)
-
-### Tools
-
-![Git](https://skillicons.dev/icons?i=git)
-![Linux](https://skillicons.dev/icons?i=linux)
-![Docker](https://skillicons.dev/icons?i=docker)
+* 🔍 Hunting for web application vulnerabilities
+* 🤖 Building AI-powered applications
+* 🔒 Developing secure backend systems
+* 🌱 Learning advanced offensive and defensive security
+* 💡 Contributing to open-source projects
 
 ---
 
-# 🚀 Featured Projects
-
-🔐 Secure Authentication System
-
-🛡 Vulnerability Scanner
-
-📧 Phishing Email Detection
-
-🤖 Voxa AI Receptionist
-
----
-
-## 📈 GitHub Analytics
+## 🛠️ Tech Stack
 
 <p align="center">
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=MK-1407&show_icons=true&theme=tokyonight&hide_border=true"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MK-1407&layout=compact&theme=tokyonight&hide_border=true"/>
-</p>
-
-<p align="center">
-<img src="https://streak-stats.demolab.com?user=MK-1407&theme=tokyonight&hide_border=true"/>
+<img src="https://skillicons.dev/icons?i=python,javascript,typescript,c,nodejs,express,react,mongodb,tailwind,linux,docker,git,github,vscode&perline=7" />
 </p>
 
 ---
 
-## 🎯 2026 Goals
+## 🚀 Featured Projects
 
-- 🏴 Earn my first major bug bounty
-- 🤖 Build production AI products
-- 🌍 Contribute more to Open Source
-- 📚 Master advanced web security
-- 🚀 Land a Security/AI internship
+| Project                             | Description                                                                                                                                    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🔐 **Secure Authentication System** | Authentication system implementing JWT, password hashing, validation, rate limiting, and security best practices.                              |
+| 🛡️ **Vulnerability Scanner**       | Multi-threaded scanner that detects open ports, identifies running services, performs banner grabbing, and reports outdated software versions. |
+| 📧 **Phishing Detection Model**     | Machine learning model trained on multiple datasets to classify phishing emails using NLP techniques.                                          |
+| 🤖 **Voxa** *(Work in Progress)*    | AI-powered voice receptionist that combines speech recognition, LLMs, and natural speech synthesis.                                            |
+
+---
+
+## 📊 GitHub Statistics
+
+<p align="center">
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=MK-1407&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" />
+
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MK-1407&layout=compact&theme=tokyonight&hide_border=true" />
+</p>
+
+<p align="center">
+<img src="https://streak-stats.demolab.com?user=MK-1407&theme=tokyonight&hide_border=true" />
+</p>
+
+<p align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=MK-1407&theme=tokyo-night&hide_border=true" />
+</p>
+
+---
+
+## 🏆 GitHub Achievements
+
+<p align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=MK-1407&theme=tokyonight&no-frame=true&no-bg=true&margin-w=15&row=1" />
+</p>
+
+---
+
+## 🎯 What You'll Find Here
+
+* 🔒 Security-focused projects
+* 🤖 AI and Machine Learning experiments
+* 🌐 Backend APIs and web applications
+* 🧰 Developer tools and automation
+* 📚 Continuous learning through real-world projects
+
+---
+
+## 📫 Connect With Me
+
+<p align="center">
+
+<a href="https://www.linkedin.com/in/mayank-k-1407">
+<img src="https://skillicons.dev/icons?i=linkedin" />
+</a>
+
+<a href="mailto:YOUR_EMAIL_HERE">
+<img src="https://skillicons.dev/icons?i=gmail" />
+</a>
+
+</p>
 
 ---
 
 <div align="center">
 
-### Thanks for visiting 👨‍💻
+### ⭐ Thanks for visiting!
 
-⭐ If you like my work, check out my repositories.
+*If you find any of my projects interesting, feel free to explore the repositories, open an issue, or connect with me.*
+
+**Happy Coding! 🚀**
 
 </div>
