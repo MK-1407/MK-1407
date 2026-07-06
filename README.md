@@ -88,7 +88,7 @@ class Mayank:
 </p>
 
 <p align="center">
-<img src="https://streak-stats.demolab.com?user=MK-1407&theme=tokyonight&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api?username=MK-1407&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=86400"/>
 </p>
 
 <p align="center">
