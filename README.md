@@ -100,11 +100,11 @@ class Mayank:
 
 <p align="center">
 
-<a href="https://www.linkedin.com/in/mayank-k-1407">
+<a href="https://linkedin.stremlo.dev">
 <img src="https://skillicons.dev/icons?i=linkedin" />
 </a>
 
-<a href="mailto:your.actual.email@gmail.com">
+<a href="mailto:hello@stremlo.dev">
 <img src="https://skillicons.dev/icons?i=gmail" />
 </a>
 
