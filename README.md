@@ -1,3 +1,1 @@
-<p align="center">
-  <img src="readme.svg" width="100%" alt="Logo">
-</p>
+<img src="https://profilesvg.onrender.com" width="100%" alt="Profile Banner">
