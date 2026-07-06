@@ -7,6 +7,9 @@
 <br>
 
 ![Profile Views](https://komarev.com/ghpvc/?username=MK-1407&style=for-the-badge&color=00D9FF&label=PROFILE+VIEWS)
+![](https://img.shields.io/github/followers/MK-1407?style=for-the-badge)
+![](https://img.shields.io/github/stars/MK-1407?style=for-the-badge)
+![](https://img.shields.io/badge/dynamic/json?color=blue&label=Repositories&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Fusers%2FMK-1407&style=for-the-badge)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MK-1407/MK-1407/output/github-contribution-grid-snake-dark.svg">
