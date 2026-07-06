@@ -8,6 +8,11 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=MK-1407&style=for-the-badge&color=00D9FF&label=PROFILE+VIEWS)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MK-1407/MK-1407/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MK-1407/MK-1407/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/MK-1407/MK-1407/output/github-contribution-grid-snake.svg">
+</picture>
 </div>
 
 ---
@@ -84,7 +89,6 @@ class Mayank:
 <p align="center">
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=MK-1407&theme=tokyo-night&hide_border=true&bg_color=0D1117" />
 </p>
-
 
 ## 🎯 What You'll Find Here
 
