@@ -1,0 +1,549 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2800" viewBox="0 0 1600 2800" preserveAspectRatio="xMidYMid meet">
+    <defs>
+        <!-- Filters -->
+        <filter id="wideBlur" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="0" result="blur">
+                <animate attributeName="stdDeviation" values="0;0;10;25;45;60" keyTimes="0;0.5;0.65;0.8;0.9;1" dur="1.8s" begin="0s" fill="freeze" />
+            </feGaussianBlur>
+        </filter>
+
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+
+        <!-- Background Gradients -->
+        <radialGradient id="haloColor" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#9FEAF9" stop-opacity="0.55" />
+            <stop offset="60%" stop-color="#9FEAF9" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#9FEAF9" stop-opacity="0" />
+        </radialGradient>
+
+        <radialGradient id="ambientTop" cx="50%" cy="10%" r="70%">
+            <stop offset="0%" stop-color="#1a2a3a" stop-opacity="0.6" />
+            <stop offset="50%" stop-color="#0a1520" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#09090B" stop-opacity="0" />
+        </radialGradient>
+
+        <radialGradient id="ambientBottom" cx="50%" cy="90%" r="60%">
+            <stop offset="0%" stop-color="#2a0a30" stop-opacity="0.4" />
+            <stop offset="50%" stop-color="#0a1520" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#09090B" stop-opacity="0" />
+        </radialGradient>
+
+        <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+            <stop offset="50%" stop-color="#000" stop-opacity="0" />
+            <stop offset="100%" stop-color="#000" stop-opacity="0.5" />
+        </radialGradient>
+
+        <!-- Wave Gradients -->
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f2027" stop-opacity="0.9" />
+            <stop offset="50%" stop-color="#2c5364" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#00d9ff" stop-opacity="0.3" />
+        </linearGradient>
+
+        <linearGradient id="headerGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1a2a3a" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#9FEAF9" stop-opacity="0.1" />
+        </linearGradient>
+
+        <linearGradient id="footerGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00d9ff" stop-opacity="0.3" />
+            <stop offset="50%" stop-color="#2c5364" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#0f2027" stop-opacity="0.9" />
+        </linearGradient>
+
+        <!-- Text Gradients -->
+        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#9FEAF9" />
+            <stop offset="50%" stop-color="#5DCAA5" />
+            <stop offset="100%" stop-color="#6FB8C7" />
+        </linearGradient>
+
+        <linearGradient id="subtitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9FEAF9" />
+            <stop offset="50%" stop-color="#E879F9" />
+            <stop offset="100%" stop-color="#5DCAA5" />
+        </linearGradient>
+
+        <linearGradient id="statusGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5DCAA5" />
+            <stop offset="100%" stop-color="#6BF7C5" />
+        </linearGradient>
+
+        <linearGradient id="sectionHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9FEAF9" />
+            <stop offset="100%" stop-color="#6FB8C7" />
+        </linearGradient>
+
+        <linearGradient id="mottoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#EAF5F0" />
+            <stop offset="100%" stop-color="#9FEAF9" />
+        </linearGradient>
+
+        <!-- Border circling gradient -->
+        <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="white" stop-opacity="0" />
+            <stop offset="40%" stop-color="white" stop-opacity="0" />
+            <stop offset="50%" stop-color="#9FEAF9" stop-opacity="0.8" />
+            <stop offset="60%" stop-color="white" stop-opacity="0" />
+            <stop offset="100%" stop-color="white" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- Patterns -->
+        <pattern id="gridDots" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="16" cy="16" r="0.8" fill="#9FEAF9" fill-opacity="0.04" />
+        </pattern>
+
+        <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="4" y2="0" stroke="#fff" stroke-opacity="0.012" stroke-width="0.5" />
+        </pattern>
+
+        <!-- Icons -->
+        <g id="icon-shield">
+            <path d="M9 2l-7 3v5c0 4.5 3.5 8.3 7 9 3.5-.7 7-4.5 7-9V5l-7-3z" fill="none" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 11.5l-2-2" fill="none" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M9 11.5l2-2" fill="none" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+
+        <g id="icon-code">
+            <path d="M7 8l-4 4 4 4" fill="none" stroke="#9FEAF9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 8l4 4-4 4" fill="none" stroke="#9FEAF9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 4l-4 16" fill="none" stroke="#9FEAF9" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+
+        <g id="icon-rocket">
+            <path d="M12 15l-3-3" fill="none" stroke="#F9E05D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 14l-2.5 2.5" fill="none" stroke="#F9E05D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M12 2C9 5 8 9 8 12c0 2 1 4 2 5" fill="none" stroke="#F9E05D" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 7c0 2 1 4 2 5" fill="none" stroke="#F9E05D" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="16" cy="4" r="1.5" fill="#F9E05D" />
+            <path d="M9 18c-2 1-5 2-6 3 1-1 2-4 3-6" fill="none" stroke="#F9E05D" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+
+        <g id="icon-star">
+            <path d="M12 2l2.5 7.5H22l-6 4.5 2.5 7.5L12 17l-6.5 4.5L8 14l-6-4.5h7.5L12 2z" fill="none" stroke="#F9E05D" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- LinkedIn official icon -->
+        <g id="icon-linkedin">
+            <rect x="1" y="1" width="22" height="22" rx="4" fill="#0A66C2"/>
+            <path d="M6.5 9.5v8h-3v-8h3z" fill="white"/>
+            <circle cx="5" cy="6" r="1.5" fill="white"/>
+            <path d="M11 12v5.5h-3V12h3zm0-3.5v1.5h-3V8.5h3z" fill="white"/>
+            <path d="M14 13v4.5h3V13c0-1.5-1-2-2-2s-1 .5-1 2z" fill="white"/>
+        </g>
+
+        <!-- Gmail official icon -->
+        <g id="icon-gmail">
+            <path d="M2 5v14h20V5l-10 8L2 5z" fill="#EA4335"/>
+            <path d="M2 5l10 8 10-8H2z" fill="white" fill-opacity="0.3"/>
+        </g>
+
+        <!-- Tech stack brand icons (14x14 viewport) -->
+        <g id="icon-py">
+            <path d="M7 1.5C4.5 1.5 3 2.8 3 4.3v1.4h3.5v-.4c0-.9.8-1.5 2.5-1.5 1.6 0 2.5.6 2.5 1.5v1.3c0 .3-.9 1.3-2.5 1.3H5c-1.4 0-2.5 1.1-2.5 2.5v1.7c0 1.4 1.1 2.5 2.5 2.5h1.5c.5 0 1-.4 1-1v-.5c0-.5-.5-1-1-1H5c-.4 0-.8-.3-.8-.8V9.3c0-.4.4-.8.8-.8h3.5c2.1 0 3.5-1.2 3.5-2.5V4.3c0-1.8-1.6-2.8-4-2.8z" fill="#3776AB"/>
+            <path d="M10 11.5H9v.8c0 .4-.7.8-1.5.8S6 12.7 6 12.3v-1c0-.4.7-.8 1.5-.8H9c.7 0 1.5-.6 1.5-1.3V7.8h-2v.5c0 .3-.7.8-2 .8-1.2 0-2-.5-2-1.2V6.3h-2v1.2c0 1.3 1.2 2 3 2s3-.7 3-2v-.5h2v1.2c0 1.3-1.2 2-3 2z" fill="#FFD43B"/>
+        </g>
+
+        <g id="icon-js">
+            <rect x="1" y="1" width="12" height="12" rx="2" fill="#F7DF1E"/>
+            <path d="M3.5 11V7.5h1V10h1V5h1v6H3.5zm4-2v4h1v-1.5h1V11h1V9c0-.8-.7-1.5-1.5-1.5S7.5 8.2 7.5 9z" fill="black"/>
+        </g>
+
+        <g id="icon-ts">
+            <rect x="1" y="1" width="12" height="12" rx="2" fill="#3178C6"/>
+            <path d="M3 3h8v8H3V3zm1.5 6.5V11h3v-1.5h-1V9h-1v.5h-1zM10 8h-1v2H8V6H7v3.5H6V6H5v2H4V5h6v3z" fill="white"/>
+        </g>
+
+        <g id="icon-c">
+            <path d="M7 1L1 4v8l6 3 6-3V4L7 1zm0 1.5L11.5 5.5V10L7 12.5 2.5 10V5.5L7 2.5z" fill="#A8B9CC"/>
+            <path d="M7 4.5L4.7 6v4l2.3 1.5 2.3-1.5V6L7 4.5z" fill="white"/>
+            <path d="M8.5 7.5v1l-1 .6v-1l1-.6z" fill="#A8B9CC"/>
+        </g>
+
+        <g id="icon-node">
+            <path d="M7 1.5L2 4v8l5 3 5-3V4L7 1.5z" fill="#339933"/>
+            <path d="M7 3L4 4.5v5l3 1.5 3-1.5v-5L7 3z" fill="white" opacity="0.8"/>
+        </g>
+
+        <g id="icon-express">
+            <text x="1" y="11" font-size="11" font-weight="bold" fill="#EAF5F0" font-family="Arial">Ex</text>
+        </g>
+
+        <g id="icon-react">
+            <ellipse cx="7" cy="7" rx="6" ry="2" fill="none" stroke="#61DAFB" stroke-width="0.8"/>
+            <ellipse cx="7" cy="7" rx="2" ry="6" fill="none" stroke="#61DAFB" stroke-width="0.8"/>
+            <ellipse cx="7" cy="7" rx="5.5" ry="2" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(-60 7 7)"/>
+            <ellipse cx="7" cy="7" rx="5.5" ry="2" fill="none" stroke="#61DAFB" stroke-width="0.8" transform="rotate(60 7 7)"/>
+            <circle cx="7" cy="7" r="1" fill="#61DAFB"/>
+        </g>
+
+        <g id="icon-mongo">
+            <path d="M7 1.5L5 5l1.5 7h1L9 5 7 1.5z" fill="#47A248"/>
+            <path d="M6 12l1 1.5 1-1.5H6z" fill="#47A248"/>
+        </g>
+
+        <g id="icon-tailwind">
+            <path d="M7 2.5C5 2.5 4 4 4 5.5c1 0 2 .5 2.5 1.5.5-1 1.5-1.5 2.5-1.5-1.5 0-2.5-1-2.5-3z" fill="#06B6D4"/>
+            <path d="M9.5 5C7.5 5 6.5 6.5 6.5 8c1 0 2 .5 2.5 1.5.5-1 1.5-1.5 2.5-1.5-1.5 0-2.5-1-2.5-3z" fill="#06B6D4"/>
+        </g>
+
+        <g id="icon-linux">
+            <circle cx="7" cy="7" r="5.5" fill="none" stroke="#FCC624" stroke-width="0.8"/>
+            <path d="M7 3c-.5 1-1.5 2-1.5 3 0 .8.3 1.5 0 2-.3.5-.5 1-.5 1.5s.3 1 .5 1" fill="none" stroke="#FCC624" stroke-width="0.8"/>
+            <path d="M7 3c.5 1 1.5 2 1.5 3 0 .8-.3 1.5 0 2 .3.5.5 1 .5 1.5s-.3 1-.5 1" fill="none" stroke="#FCC624" stroke-width="0.8"/>
+        </g>
+
+        <g id="icon-docker">
+            <path d="M2 8h2v2H2V8zm3 0h2v2H5V8zm0-3h2v2H5V5zm3 3h2v2H8V8zm0-3h2v2H8V5zm3 0h2v2h-2V5zm0 3h2v2h-2V8zm3-2h2v2h-2V6z" fill="#2496ED"/>
+            <path d="M2 10h12c1 0 2-1 2-2 1 0 2-.5 2-1.5" fill="none" stroke="#2496ED" stroke-width="0.8"/>
+        </g>
+
+        <g id="icon-git">
+            <path d="M2 7l5.5-5.5c.5-.5 1.5-.5 2 0l3 3c.5.5.5 1.5 0 2L7 12" fill="none" stroke="#F05032" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="4" cy="10" r="2" fill="none" stroke="#F05032" stroke-width="0.8"/>
+            <circle cx="11" cy="4" r="1.5" fill="none" stroke="#F05032" stroke-width="0.8"/>
+        </g>
+
+        <!-- Subtitle typewriter clip -->
+        <clipPath id="clip-subtitle">
+            <rect x="250" y="232" height="32" width="0">
+                <animate attributeName="width" from="0" to="850" begin="2.0s" dur="1.2s" fill="freeze" />
+            </rect>
+        </clipPath>
+    </defs>
+
+    <!-- ============================================ -->
+    <!-- BACKGROUND LAYER                             -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible" text-rendering="geometricPrecision">
+        <rect width="100%" height="100%" fill="#09090B" />
+        <rect width="100%" height="100%" fill="url(#ambientTop)" />
+        <rect width="100%" height="100%" fill="url(#ambientBottom)" />
+        <rect width="100%" height="100%" fill="url(#gridDots)" />
+        <rect width="100%" height="100%" fill="url(#scanlines)" />
+
+        <rect width="100%" height="100%" fill="url(#vignette)" />
+
+        <!-- Section rulers -->
+        <line x1="100" y1="280" x2="1500" y2="280" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="281" x2="1500" y2="281" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="680" x2="1500" y2="680" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="681" x2="1500" y2="681" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="935" x2="1500" y2="935" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="936" x2="1500" y2="936" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="1100" x2="1500" y2="1100" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="1101" x2="1500" y2="1101" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="1505" x2="1500" y2="1505" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="1506" x2="1500" y2="1506" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="1780" x2="1500" y2="1780" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="1781" x2="1500" y2="1781" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+
+        <line x1="100" y1="2310" x2="1500" y2="2310" stroke="#1F2D3D" stroke-width="1" opacity="0.4" />
+        <line x1="100" y1="2311" x2="1500" y2="2311" stroke="#9FEAF9" stroke-width="0.5" opacity="0.08" />
+    </svg>
+
+<!-- CIRCLING BORDER                              -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <rect x="4" y="4" width="1592" height="2792" rx="16" fill="none" stroke="white" stroke-width="0.8" opacity="0.06" />
+
+        <rect x="4" y="4" width="1592" height="2792" rx="16" fill="none" stroke="#9FEAF9" stroke-width="2" stroke-dasharray="600 8200" opacity="0.5">
+            <animate attributeName="stroke-dashoffset" from="0" to="-8800" dur="18s" repeatCount="indefinite" />
+        </rect>
+
+        <rect x="4" y="4" width="1592" height="2792" rx="16" fill="none" stroke="white" stroke-width="1.2" stroke-dasharray="150 8650" opacity="0.7">
+            <animate attributeName="stroke-dashoffset" from="-2200" to="-11000" dur="18s" repeatCount="indefinite" />
+        </rect>
+
+        <rect x="4" y="4" width="1592" height="2792" rx="16" fill="none" stroke="#E879F9" stroke-width="1.5" stroke-dasharray="300 8500" opacity="0.35">
+            <animate attributeName="stroke-dashoffset" from="-4400" to="-13200" dur="18s" repeatCount="indefinite" />
+        </rect>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- HEADER WAVE                                  -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g>
+            <path d="M0,0 L1600,0 L1600,160 Q1200,90 800,160 Q400,230 0,160 Z" fill="url(#headerGrad)">
+                <animate attributeName="d" values="M0,0 L1600,0 L1600,180 Q1200,100 800,180 Q400,260 0,180 Z;M0,0 L1600,0 L1600,140 Q1200,220 800,140 Q400,60 0,140 Z;M0,0 L1600,0 L1600,180 Q1200,100 800,180 Q400,260 0,180 Z" dur="6s" repeatCount="indefinite" />
+            </path>
+            <path d="M0,0 L1600,0 L1600,200 Q1200,130 800,200 Q400,270 0,200 Z" fill="url(#headerGrad2)" opacity="0.4">
+                <animate attributeName="d" values="M0,0 L1600,0 L1600,220 Q1200,140 800,220 Q400,300 0,220 Z;M0,0 L1600,0 L1600,180 Q1200,260 800,180 Q400,100 0,180 Z;M0,0 L1600,0 L1600,220 Q1200,140 800,220 Q400,300 0,220 Z" dur="8s" repeatCount="indefinite" />
+            </path>
+
+            <text x="800" y="100" text-anchor="middle" fill="white" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="48" font-weight="800" opacity="0.9" letter-spacing="8">
+                MAYANK
+                <animate attributeName="opacity" values="0.9;0.7;0.9" dur="3s" repeatCount="indefinite" />
+            </text>
+
+            <text x="800" y="140" text-anchor="middle" fill="#9FEAF9" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="14" font-weight="600" opacity="0.6" letter-spacing="4">
+                Build. Break. Learn. Repeat.
+            </text>
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- SUBTITLE SECTION                            -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <text x="250" y="225" fill="url(#subtitleGrad)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="16" font-weight="600" clip-path="url(#clip-subtitle)" text-rendering="geometricPrecision">
+            Cybersecurity &#8226; AI Engineering &#8226; Backend Development
+        </text>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- ABOUT ME SECTION                            -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <rect x="100" y="310" width="1400" height="340" rx="10" fill="#0D1117" stroke="#1F2D3D" stroke-width="1.5" shape-rendering="crispEdges" />
+        <rect x="100" y="310" width="1400" height="4" rx="2" fill="#9FEAF9" opacity="0.15" shape-rendering="crispEdges" />
+
+        <circle cx="118" cy="325" r="5" fill="#FF5F57" opacity="0.8" />
+        <circle cx="136" cy="325" r="5" fill="#FFBD2E" opacity="0.8" />
+        <circle cx="154" cy="325" r="5" fill="#28C840" opacity="0.8" />
+
+        <text x="800" y="330" text-anchor="middle" fill="#6FB8C7" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="13" opacity="0.6">about_me.py</text>
+        <line x1="110" y1="338" x2="1490" y2="338" stroke="#1F2D3D" stroke-width="1" opacity="0.5" />
+
+        <g transform="translate(150, 360)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="16" xml:space="preserve" text-rendering="geometricPrecision">
+            <text x="0" y="0" fill="#9FEAF9" opacity="0">
+                <tspan fill="#E879F9" font-weight="700">class </tspan><tspan fill="#9FEAF9" font-weight="700">Mayank</tspan><tspan fill="#6FB8C7">:</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="25" y="22" opacity="0">
+                <tspan fill="#9FEAF9">role </tspan><tspan fill="#EAF5F0">= </tspan><tspan fill="#5DCAA5">&quot;Computer Science Student&quot;</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="0.4s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="25" y="44" opacity="0">
+                <tspan fill="#9FEAF9">location </tspan><tspan fill="#EAF5F0">= </tspan><tspan fill="#5DCAA5">&quot;India&quot;</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="0.6s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="25" y="66" opacity="0">
+                <tspan fill="#9FEAF9">interests </tspan><tspan fill="#EAF5F0">= </tspan><tspan fill="#6FB8C7">[</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="50" y="88" fill="#5DCAA5" opacity="0">
+                &quot;Cybersecurity&quot;<tspan fill="#6FB8C7">,</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="1.0s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="50" y="110" fill="#5DCAA5" opacity="0">
+                &quot;AI Engineering&quot;<tspan fill="#6FB8C7">,</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="1.2s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="50" y="132" fill="#5DCAA5" opacity="0">
+                &quot;Backend Development&quot;<tspan fill="#6FB8C7">,</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="1.4s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="50" y="154" fill="#5DCAA5" opacity="0">
+                &quot;Machine Learning&quot;<tspan fill="#6FB8C7">,</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="50" y="176" fill="#5DCAA5" opacity="0">
+                &quot;System Design&quot;
+                <animate attributeName="opacity" from="0" to="1" begin="1.8s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="25" y="198" fill="#6FB8C7" opacity="0">
+                ]
+                <animate attributeName="opacity" from="0" to="1" begin="2.0s" dur="0.3s" fill="freeze" />
+            </text>
+
+            <text x="25" y="220" opacity="0">
+                <tspan fill="#9FEAF9">motto </tspan><tspan fill="#EAF5F0">= </tspan><tspan fill="#5DCAA5">&quot;Build. Break. Learn. Repeat.&quot;</tspan>
+                <animate attributeName="opacity" from="0" to="1" begin="2.2s" dur="0.3s" fill="freeze" />
+            </text>
+
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- CURRENT FOCUS                               -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g transform="translate(100, 710)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" text-rendering="geometricPrecision">
+            <rect x="0" y="0" width="1400" height="200" rx="10" fill="#0D1117" stroke="#1F2D3D" stroke-width="1.5" shape-rendering="crispEdges" />
+            <rect x="0" y="0" width="1400" height="4" rx="2" fill="#E879F9" opacity="0.15" shape-rendering="crispEdges" />
+
+            <circle cx="18" cy="15" r="5" fill="#FF5F57" opacity="0.8" />
+            <circle cx="36" cy="15" r="5" fill="#FFBD2E" opacity="0.8" />
+            <circle cx="54" cy="15" r="5" fill="#28C840" opacity="0.8" />
+
+            <text x="700" y="20" text-anchor="middle" fill="#6FB8C7" font-size="13" opacity="0.6">current_focus.sh</text>
+            <line x1="10" y1="28" x2="1390" y2="28" stroke="#1F2D3D" stroke-width="1" opacity="0.5" />
+
+            <!-- Focus bullets -->
+            <g transform="translate(30, 50)" font-size="16" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" begin="3.0s" dur="0.3s" fill="freeze" />
+
+                <text x="0" y="0" fill="#EAF5F0">
+                    <tspan fill="#F9E05D">$ </tspan><tspan fill="#9FEAF9">cat</tspan><tspan fill="#6FB8C7"> current_focus.md</tspan>
+                </text>
+
+                <text x="0" y="28" fill="#EAF5F0">
+                    $ (echo &quot;<tspan fill="#5DCAA5">Hunting web vulnerabilities</tspan>&quot;)
+                </text>
+
+                <text x="0" y="56" fill="#EAF5F0">
+                    $ (echo &quot;<tspan fill="#5DCAA5">Building AI-powered applications</tspan>&quot;)
+                </text>
+
+                <text x="0" y="84" fill="#EAF5F0">
+                    $ (echo &quot;<tspan fill="#5DCAA5">Developing secure backend systems</tspan>&quot;)
+                </text>
+
+                <text x="0" y="112" fill="#EAF5F0">
+                    $ (echo &quot;<tspan fill="#5DCAA5">Learning offensive &amp; defensive security</tspan>&quot;)
+                </text>
+
+                <text x="0" y="140" fill="#EAF5F0">
+                    $ (echo &quot;<tspan fill="#5DCAA5">Contributing to open-source projects</tspan>&quot;)
+                </text>
+            </g>
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- TECH STACK                                  -->
+    <!-- ============================================ -->
+    
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g transform="translate(100, 950)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" text-rendering="geometricPrecision" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="4.0s" dur="0.3s" fill="freeze" />
+            <rect x="0" y="0" width="1400" height="120" rx="10" fill="#0D1117" stroke="#1F2D3D" stroke-width="1.5" shape-rendering="crispEdges" />
+            <rect x="0" y="0" width="1400" height="4" rx="2" fill="#5DCAA5" opacity="0.15" shape-rendering="crispEdges" />
+            <circle cx="18" cy="15" r="5" fill="#FF5F57" opacity="0.8" />
+            <circle cx="36" cy="15" r="5" fill="#FFBD2E" opacity="0.8" />
+            <circle cx="54" cy="15" r="5" fill="#28C840" opacity="0.8" />
+            <text x="700" y="20" text-anchor="middle" fill="#6FB8C7" font-size="13" opacity="0.6">tech_stack.sh</text>
+            <line x1="10" y1="28" x2="1390" y2="28" stroke="#1F2D3D" stroke-width="1" opacity="0.5" />
+            <image href="https://skillicons.dev/icons?i=python,javascript,typescript,c,nodejs,express,react,mongodb,tailwind,linux,docker,git,github,vscode&amp;theme=dark&amp;perline=7" x="175" y="42" width="1050" height="70" />
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- FEATURED PROJECTS TABLE                     -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g transform="translate(100, 1110)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" text-rendering="geometricPrecision" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="5.0s" dur="0.4s" fill="freeze" />
+
+            <rect x="0" y="0" width="1400" height="365" rx="10" fill="#0D1117" stroke="#1F2D3D" stroke-width="1.5" shape-rendering="crispEdges" />
+            <rect x="0" y="0" width="1400" height="4" rx="2" fill="#F9E05D" opacity="0.15" shape-rendering="crispEdges" />
+
+            <circle cx="18" cy="15" r="5" fill="#FF5F57" opacity="0.8" />
+            <circle cx="36" cy="15" r="5" fill="#FFBD2E" opacity="0.8" />
+            <circle cx="54" cy="15" r="5" fill="#28C840" opacity="0.8" />
+
+            <text x="700" y="20" text-anchor="middle" fill="#6FB8C7" font-size="14" opacity="0.6">featured_projects.md</text>
+            <line x1="10" y1="28" x2="1390" y2="28" stroke="#1F2D3D" stroke-width="1" opacity="0.5" />
+
+            <!-- Table header -->
+            <rect x="20" y="40" width="1360" height="34" rx="4" fill="#1A2332" />
+            <text x="40" y="62" fill="#9FEAF9" font-size="15" font-weight="700">Project</text>
+            <line x1="420" y1="44" x2="420" y2="70" stroke="#2A3A4A" stroke-width="1" />
+            <text x="440" y="62" fill="#9FEAF9" font-size="15" font-weight="700">Description</text>
+
+            <line x1="20" y1="74" x2="1380" y2="74" stroke="#1F2D3D" stroke-width="1" />
+
+            <!-- Row 1 -->
+            <rect x="20" y="74" width="1360" height="46" fill="#0D1117" fill-opacity="0.5" />
+            <text x="40" y="101" fill="#5DCAA5" font-size="15" font-weight="700">[1] Secure Auth System</text>
+            <text x="440" y="101" fill="#EAF5F0" font-size="15">JWT auth, password hashing, validation, rate limiting</text>
+
+            <line x1="20" y1="120" x2="1380" y2="120" stroke="#1F2D3D" stroke-width="0.5" opacity="0.5" />
+
+            <!-- Row 2 -->
+            <rect x="20" y="120" width="1360" height="46" fill="#0D1117" fill-opacity="0.3" />
+            <text x="40" y="147" fill="#5DCAA5" font-size="15" font-weight="700">[2] Vulnerability Scanner</text>
+            <text x="440" y="147" fill="#EAF5F0" font-size="15">Multi-threaded port/service scanner with banner grabbing</text>
+
+            <line x1="20" y1="166" x2="1380" y2="166" stroke="#1F2D3D" stroke-width="0.5" opacity="0.5" />
+
+            <!-- Row 3 -->
+            <rect x="20" y="166" width="1360" height="46" fill="#0D1117" fill-opacity="0.5" />
+            <text x="40" y="193" fill="#5DCAA5" font-size="15" font-weight="700">[3] Phishing Detection Model</text>
+            <text x="440" y="193" fill="#EAF5F0" font-size="15">ML/NLP model trained to classify phishing emails</text>
+
+            <line x1="20" y1="212" x2="1380" y2="212" stroke="#1F2D3D" stroke-width="0.5" opacity="0.5" />
+
+            <!-- Row 4 -->
+            <rect x="20" y="212" width="1360" height="46" fill="#0D1117" fill-opacity="0.3" />
+            <text x="40" y="239" fill="#5DCAA5" font-size="15" font-weight="700">[4] Voxa (Work in Progress)</text>
+            <text x="440" y="239" fill="#EAF5F0" font-size="15">AI voice receptionist: speech + LLM + speech synthesis</text>
+
+            <!-- Find here section -->
+            <line x1="20" y1="270" x2="1380" y2="270" stroke="#1F2D3D" stroke-width="1" opacity="0.6" />
+
+            <text x="40" y="292" fill="#9FEAF9" font-size="14" font-weight="700">find_here.md:</text>
+
+            <g transform="translate(40, 305)">
+                <text x="0" y="0" fill="#EAF5F0" font-size="14">Security AI/ML Backend DevOps Open Source Learning</text>
+            </g>
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- CONNECT SECTION                             -->
+    <!-- ============================================ -->
+    
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g transform="translate(100, 1535)" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" text-rendering="geometricPrecision" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="6.0s" dur="0.4s" fill="freeze" />
+            <rect x="0" y="0" width="1400" height="150" rx="10" fill="#0D1117" stroke="#1F2D3D" stroke-width="1.5" shape-rendering="crispEdges" />
+            <rect x="0" y="0" width="1400" height="4" rx="2" fill="#5DCAA5" opacity="0.15" shape-rendering="crispEdges" />
+            <circle cx="18" cy="15" r="5" fill="#FF5F57" opacity="0.8" />
+            <circle cx="36" cy="15" r="5" fill="#FFBD2E" opacity="0.8" />
+            <circle cx="54" cy="15" r="5" fill="#28C840" opacity="0.8" />
+            <text x="700" y="20" text-anchor="middle" fill="#6FB8C7" font-size="13" opacity="0.6">connect.sh</text>
+            <line x1="10" y1="28" x2="1390" y2="28" stroke="#1F2D3D" stroke-width="1" opacity="0.5" />
+            <g transform="translate(550, 55)">
+                <a href="https://linkedin.stremlo.dev" target="_blank">
+                    <image href="https://skillicons.dev/icons?i=linkedin" x="0" y="0" width="50" height="50" />
+                </a>
+                <a href="mailto:hello@stremlo.dev">
+                    <image href="https://skillicons.dev/icons?i=gmail" x="80" y="0" width="50" height="50" />
+                </a>
+            </g>
+            <g transform="translate(400, 120)" opacity="0">
+                <animate attributeName="opacity" from="0" to="1" begin="6.8s" dur="0.4s" fill="freeze" />
+                <text x="0" y="0" fill="url(#sectionHeaderGrad)" font-size="14" font-weight="700" filter="url(#softGlow)">Thanks for visiting! Happy Coding.</text>
+            </g>
+        </g>
+    </svg>
+
+    <!-- ============================================ -->
+    <!-- FOOTER WAVE                                 -->
+    <!-- ============================================ -->
+    <svg x="0" y="0" width="1600" height="2800" viewBox="0 0 1600 2800" overflow="visible">
+        <g opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="7.5s" dur="0.5s" fill="freeze" />
+
+            <path d="M0,2800 L1600,2800 L1600,2640 Q1200,2710 800,2640 Q400,2570 0,2640 Z" fill="url(#footerGrad)">
+                <animate attributeName="d" values="M0,2800 L1600,2800 L1600,2620 Q1200,2690 800,2620 Q400,2550 0,2620 Z;M0,2800 L1600,2800 L1600,2660 Q1200,2730 800,2660 Q400,2590 0,2660 Z;M0,2800 L1600,2800 L1600,2620 Q1200,2690 800,2620 Q400,2550 0,2620 Z" dur="6s" repeatCount="indefinite" />
+            </path>
+
+            <path d="M0,2800 L1600,2800 L1600,2680 Q1200,2610 800,2680 Q400,2750 0,2680 Z" fill="url(#headerGrad2)" opacity="0.3">
+                <animate attributeName="d" values="M0,2800 L1600,2800 L1600,2660 Q1200,2590 800,2660 Q400,2730 0,2660 Z;M0,2800 L1600,2800 L1600,2700 Q1200,2630 800,2700 Q400,2770 0,2700 Z;M0,2800 L1600,2800 L1600,2660 Q1200,2590 800,2660 Q400,2730 0,2660 Z" dur="8s" repeatCount="indefinite" />
+            </path>
+
+            <text x="800" y="2755" text-anchor="middle" fill="#6FB8C7" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace" font-size="14" opacity="0.4">Stay curious. Keep building.</text>
+        </g>
+    </svg>
+</svg>
